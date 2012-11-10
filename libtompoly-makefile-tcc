@@ -1,0 +1,80 @@
+# libtomcrypt 0.04 tcc+nmake
+# William Welna <Sanguinarious@Occultusterra.com>
+
+CFLAGS = -I. -DWIN32 
+
+OBJECTS=pb_init.o pb_clear.o pb_init_size.o pb_grow.o pb_copy.o pb_clamp.o pb_init_copy.o \
+pb_add.o pb_sub.o pb_mul.o pb_div.o pb_zero.o pb_lshd.o pb_rshd.o pb_exch.o pb_mod.o \
+pb_addmod.o pb_submod.o pb_mulmod.o pb_gcd.o pb_init_multi.o pb_clear_multi.o pb_invmod.o \
+pb_cmp.o pb_shrink.o pb_exteuclid.o pb_monic.o pb_exptmod.o pb_isirreduc.o pb_rawsize.o \
+pb_toraw.o pb_readraw.o
+
+HEADERS=tompoly.h
+
+default: $(OBJECTS)
+	tiny_libmaker libtompoly.a $(OBJECTS)
+
+pb_init.o: pb_init.c
+	tcc $(CFLAGS)  -c -o pb_init.o pb_init.c
+pb_clear.o: pb_clear.c
+	tcc $(CFLAGS)  -c -o pb_clear.o pb_clear.c
+pb_init_size.o: pb_init_size.c
+	tcc $(CFLAGS)  -c -o pb_init_size.o pb_init_size.c
+pb_grow.o: pb_grow.c
+	tcc $(CFLAGS)  -c -o pb_grow.o pb_grow.c
+pb_copy.o: pb_copy.c
+	tcc $(CFLAGS)  -c -o pb_copy.o pb_copy.c
+pb_clamp.o: pb_clamp.c
+	tcc $(CFLAGS)  -c -o pb_clamp.o pb_clamp.c
+pb_init_copy.o: pb_init_copy.c
+	tcc $(CFLAGS)  -c -o pb_init_copy.o pb_init_copy.c
+pb_add.o: pb_add.c
+	tcc $(CFLAGS)  -c -o pb_add.o pb_add.c
+pb_sub.o: pb_sub.c
+	tcc $(CFLAGS)  -c -o pb_sub.o pb_sub.c
+pb_mul.o: pb_mul.c
+	tcc $(CFLAGS)  -c -o pb_mul.o pb_mul.c
+pb_div.o: pb_div.c
+	tcc $(CFLAGS)  -c -o pb_div.o pb_div.c
+pb_zero.o: pb_zero.c
+	tcc $(CFLAGS)  -c -o pb_zero.o pb_zero.c
+pb_lshd.o: pb_lshd.c
+	tcc $(CFLAGS)  -c -o pb_lshd.o pb_lshd.c
+pb_rshd.o: pb_rshd.c
+	tcc $(CFLAGS)  -c -o pb_rshd.o pb_rshd.c
+pb_exch.o: pb_exch.c
+	tcc $(CFLAGS)  -c -o pb_exch.o pb_exch.c
+pb_mod.o: pb_mod.c
+	tcc $(CFLAGS)  -c -o pb_mod.o pb_mod.c
+pb_addmod.o: pb_addmod.c
+	tcc $(CFLAGS)  -c -o pb_addmod.o pb_addmod.c
+pb_submod.o: pb_submod.c
+	tcc $(CFLAGS)  -c -o pb_submod.o pb_submod.c
+pb_mulmod.o: pb_mulmod.c
+	tcc $(CFLAGS)  -c -o pb_mulmod.o pb_mulmod.c
+pb_gcd.o: pb_gcd.c
+	tcc $(CFLAGS)  -c -o pb_gcd.o pb_gcd.c
+pb_init_multi.o: pb_init_multi.c
+	tcc $(CFLAGS)  -c -o pb_init_multi.o pb_init_multi.c
+pb_clear_multi.o: pb_clear_multi.c
+	tcc $(CFLAGS)  -c -o pb_clear_multi.o pb_clear_multi.c
+pb_invmod.o: pb_invmod.c
+	tcc $(CFLAGS)  -c -o pb_invmod.o pb_invmod.c
+pb_cmp.o: pb_cmp.c
+	tcc $(CFLAGS)  -c -o pb_cmp.o pb_cmp.c
+pb_shrink.o: pb_shrink.c
+	tcc $(CFLAGS)  -c -o pb_shrink.o pb_shrink.c
+pb_exteuclid.o: pb_exteuclid.c
+	tcc $(CFLAGS)  -c -o pb_exteuclid.o pb_exteuclid.c
+pb_monic.o: pb_monic.c
+	tcc $(CFLAGS)  -c -o pb_monic.o pb_monic.c
+pb_exptmod.o: pb_exptmod.c
+	tcc $(CFLAGS)  -c -o pb_exptmod.o pb_exptmod.c
+pb_isirreduc.o: pb_isirreduc.c
+	tcc $(CFLAGS)  -c -o pb_isirreduc.o pb_isirreduc.c
+pb_rawsize.o: pb_rawsize.c
+	tcc $(CFLAGS)  -c -o pb_rawsize.o pb_rawsize.c
+pb_toraw.o: pb_toraw.c
+	tcc $(CFLAGS)  -c -o pb_toraw.o pb_toraw.c
+pb_readraw.o: pb_readraw.c
+	tcc $(CFLAGS)  -c -o pb_readraw.o pb_readraw.c

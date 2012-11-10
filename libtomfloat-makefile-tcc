@@ -1,0 +1,127 @@
+# libtomfloat 0.02 tcc+nmake
+# William Welna <Sanguinarious@Occultusterra.com>
+
+CFLAGS = -I. -DWIN32
+
+OBJECTS=mpf_init.o mpf_clear.o mpf_init_multi.o mpf_clear_multi.o mpf_init_copy.o \
+mpf_copy.o mpf_exch.o mpf_abs.o mpf_neg.o \
+mpf_cmp.o mpf_cmp_d.o \
+mpf_normalize.o mpf_normalize_to.o mpf_iterations.o \
+mpf_const_0.o    mpf_const_1r2.o  mpf_const_2rpi.o  mpf_const_e.o     \
+mpf_const_l2e.o  mpf_const_pi.o   mpf_const_pi4.o   mpf_const_1pi.o   \
+mpf_const_2pi.o  mpf_const_d.o    mpf_const_l10e.o  mpf_const_le2.o   \
+mpf_const_pi2.o  mpf_const_r2.o   mpf_const_ln_d.o                    \
+mpf_mul_2.o mpf_div_2.o mpf_add.o mpf_sub.o mpf_mul.o mpf_sqr.o mpf_div.o \
+mpf_add_d.o mpf_sub_d.o mpf_mul_d.o mpf_div_d.o \
+mpf_invsqrt.o mpf_inv.o mpf_exp.o mpf_sqrt.o mpf_pow.o mpf_ln.o \
+mpf_cos.o mpf_sin.o mpf_tan.o mpf_acos.o mpf_asin.o mpf_atan.o
+
+HEADERS=tomfloat.h
+
+default: $(OBJECTS)
+	tiny_libmaker libtomfloat.a $(OBJECTS)
+
+mpf_init.o: mpf_init.c
+	tcc $(CFLAGS)  -c -o mpf_init.o mpf_init.c
+mpf_clear.o: mpf_clear.c
+	tcc $(CFLAGS)  -c -o mpf_clear.o mpf_clear.c
+mpf_init_multi.o: mpf_init_multi.c
+	tcc $(CFLAGS)  -c -o mpf_init_multi.o mpf_init_multi.c
+mpf_clear_multi.o: mpf_clear_multi.c
+	tcc $(CFLAGS)  -c -o mpf_clear_multi.o mpf_clear_multi.c
+mpf_init_copy.o: mpf_init_copy.c
+	tcc $(CFLAGS)  -c -o mpf_init_copy.o mpf_init_copy.c
+mpf_copy.o: mpf_copy.c
+	tcc $(CFLAGS)  -c -o mpf_copy.o mpf_copy.c
+mpf_exch.o: mpf_exch.c
+	tcc $(CFLAGS)  -c -o mpf_exch.o mpf_exch.c
+mpf_abs.o: mpf_abs.c
+	tcc $(CFLAGS)  -c -o mpf_abs.o mpf_abs.c
+mpf_neg.o: mpf_neg.c
+	tcc $(CFLAGS)  -c -o mpf_neg.o mpf_neg.c
+mpf_cmp.o: mpf_cmp.c
+	tcc $(CFLAGS)  -c -o mpf_cmp.o mpf_cmp.c
+mpf_cmp_d.o: mpf_cmp_d.c
+	tcc $(CFLAGS)  -c -o mpf_cmp_d.o mpf_cmp_d.c
+mpf_normalize.o: mpf_normalize.c
+	tcc $(CFLAGS)  -c -o mpf_normalize.o mpf_normalize.c
+mpf_normalize_to.o: mpf_normalize_to.c
+	tcc $(CFLAGS)  -c -o mpf_normalize_to.o mpf_normalize_to.c
+mpf_iterations.o: mpf_iterations.c
+	tcc $(CFLAGS)  -c -o mpf_iterations.o mpf_iterations.c
+mpf_const_0.o: mpf_const_0.c
+	tcc $(CFLAGS)  -c -o mpf_const_0.o mpf_const_0.c
+mpf_const_1r2.o: mpf_const_1r2.c
+	tcc $(CFLAGS)  -c -o mpf_const_1r2.o mpf_const_1r2.c
+mpf_const_2rpi.o: mpf_const_2rpi.c
+	tcc $(CFLAGS)  -c -o mpf_const_2rpi.o mpf_const_2rpi.c
+mpf_const_e.o: mpf_const_e.c
+	tcc $(CFLAGS)  -c -o mpf_const_e.o mpf_const_e.c
+mpf_const_l2e.o: mpf_const_l2e.c
+	tcc $(CFLAGS)  -c -o mpf_const_l2e.o mpf_const_l2e.c
+mpf_const_pi.o: mpf_const_pi.c
+	tcc $(CFLAGS)  -c -o mpf_const_pi.o mpf_const_pi.c
+mpf_const_pi4.o: mpf_const_pi4.c
+	tcc $(CFLAGS)  -c -o mpf_const_pi4.o mpf_const_pi4.c
+mpf_const_1pi.o: mpf_const_1pi.c
+	tcc $(CFLAGS)  -c -o mpf_const_1pi.o mpf_const_1pi.c
+mpf_const_2pi.o: mpf_const_2pi.c
+	tcc $(CFLAGS)  -c -o mpf_const_2pi.o mpf_const_2pi.c
+mpf_const_d.o: mpf_const_d.c
+	tcc $(CFLAGS)  -c -o mpf_const_d.o mpf_const_d.c
+mpf_const_l10e.o: mpf_const_l10e.c
+	tcc $(CFLAGS)  -c -o mpf_const_l10e.o mpf_const_l10e.c
+mpf_const_le2.o: mpf_const_le2.c
+	tcc $(CFLAGS)  -c -o mpf_const_le2.o mpf_const_le2.c
+mpf_const_pi2.o: mpf_const_pi2.c
+	tcc $(CFLAGS)  -c -o mpf_const_pi2.o mpf_const_pi2.c
+mpf_const_r2.o: mpf_const_r2.c
+	tcc $(CFLAGS)  -c -o mpf_const_r2.o mpf_const_r2.c
+mpf_const_ln_d.o: mpf_const_ln_d.c
+	tcc $(CFLAGS)  -c -o mpf_const_ln_d.o mpf_const_ln_d.c
+mpf_mul_2.o: mpf_mul_2.c
+	tcc $(CFLAGS)  -c -o mpf_mul_2.o mpf_mul_2.c
+mpf_div_2.o: mpf_div_2.c
+	tcc $(CFLAGS)  -c -o mpf_div_2.o mpf_div_2.c
+mpf_add.o: mpf_add.c
+	tcc $(CFLAGS)  -c -o mpf_add.o mpf_add.c
+mpf_sub.o: mpf_sub.c
+	tcc $(CFLAGS)  -c -o mpf_sub.o mpf_sub.c
+mpf_mul.o: mpf_mul.c
+	tcc $(CFLAGS)  -c -o mpf_mul.o mpf_mul.c
+mpf_sqr.o: mpf_sqr.c
+	tcc $(CFLAGS)  -c -o mpf_sqr.o mpf_sqr.c
+mpf_div.o: mpf_div.c
+	tcc $(CFLAGS)  -c -o mpf_div.o mpf_div.c
+mpf_add_d.o: mpf_add_d.c
+	tcc $(CFLAGS)  -c -o mpf_add_d.o mpf_add_d.c
+mpf_sub_d.o: mpf_sub_d.c
+	tcc $(CFLAGS)  -c -o mpf_sub_d.o mpf_sub_d.c
+mpf_mul_d.o: mpf_mul_d.c
+	tcc $(CFLAGS)  -c -o mpf_mul_d.o mpf_mul_d.c
+mpf_div_d.o: mpf_div_d.c
+	tcc $(CFLAGS)  -c -o mpf_div_d.o mpf_div_d.c
+mpf_invsqrt.o: mpf_invsqrt.c
+	tcc $(CFLAGS)  -c -o mpf_invsqrt.o mpf_invsqrt.c
+mpf_inv.o: mpf_inv.c
+	tcc $(CFLAGS)  -c -o mpf_inv.o mpf_inv.c
+mpf_exp.o: mpf_exp.c
+	tcc $(CFLAGS)  -c -o mpf_exp.o mpf_exp.c
+mpf_sqrt.o: mpf_sqrt.c
+	tcc $(CFLAGS)  -c -o mpf_sqrt.o mpf_sqrt.c
+mpf_pow.o: mpf_pow.c
+	tcc $(CFLAGS)  -c -o mpf_pow.o mpf_pow.c
+mpf_ln.o: mpf_ln.c
+	tcc $(CFLAGS)  -c -o mpf_ln.o mpf_ln.c
+mpf_cos.o: mpf_cos.c
+	tcc $(CFLAGS)  -c -o mpf_cos.o mpf_cos.c
+mpf_sin.o: mpf_sin.c
+	tcc $(CFLAGS)  -c -o mpf_sin.o mpf_sin.c
+mpf_tan.o: mpf_tan.c
+	tcc $(CFLAGS)  -c -o mpf_tan.o mpf_tan.c
+mpf_acos.o: mpf_acos.c
+	tcc $(CFLAGS)  -c -o mpf_acos.o mpf_acos.c
+mpf_asin.o: mpf_asin.c
+	tcc $(CFLAGS)  -c -o mpf_asin.o mpf_asin.c
+mpf_atan.o: mpf_atan.c
+	tcc $(CFLAGS)  -c -o mpf_atan.o mpf_atan.c
